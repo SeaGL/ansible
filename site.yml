@@ -8,7 +8,7 @@
     - server
     - role: rvm_io.rvm1-ruby
       tags: ruby
-      sudo: True
+      become: true
     - role: letsencrypt
       letsencrypt_webroot_path: /srv/www
       letsencrypt_email: admin@seagl.org
