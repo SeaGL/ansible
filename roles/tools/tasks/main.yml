@@ -1,0 +1,24 @@
+---
+- name: Update packages
+  apt: update_cache=yes cache_valid_time=1800
+
+- name: Install tool packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - curl
+    - gdb
+    - git-core
+    - gnupg
+    - gnupg2
+    - gnupg-curl
+    - htop
+    - mosh
+    - rsync
+    - smartmontools
+    - tmux
+    - unrar
+    - unzip
+    - vim
+    - wget
+    - zsh
+    - zsh-antigen

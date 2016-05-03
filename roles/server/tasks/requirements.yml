@@ -1,0 +1,6 @@
+# Install RVM
+- src: rvm_io.rvm1-ruby
+
+# Install LetsEncrypt
+- name: letsencrypt
+  src: https://github.com/thefinn93/ansible-letsencrypt

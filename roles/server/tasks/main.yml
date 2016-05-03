@@ -1,0 +1,11 @@
+---
+- name: Update packages
+  apt: update_cache=yes cache_valid_time=1800
+
+- name: Install server packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - nginx
+
+- name: Install from ansible galaxy
+  local_action: command ansible-galaxy install -r requirements.yml --ignore-errors
