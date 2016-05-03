@@ -1,10 +1,4 @@
 ---
-# Check apt sources
-- apt_repository: repo='deb http://ftp.us.debian.org/debian/ jessie main' state=present
-- apt_repository: repo='deb http://ftp.us.debian.org/debian/ jessie-updates main' state=present
-- apt_repository: repo='deb http://ftp.us.debian.org/debian/ jessie-proposed-updates main' state=present
-- apt_repository: repo='deb http://security.debian.org/ jessie/updates main' state=present
-
 - name: Upgrade distribution
   apt: update_cache=yes upgrade=yes cache_valid_time=1800
 
