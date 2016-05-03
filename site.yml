@@ -1,0 +1,18 @@
+---
+# Playbook for SeaGL webserver
+- hosts: all
+  roles:
+    - base
+    - tools
+    - security
+    - server
+    - role: rvm_io.rvm1-ruby
+      tags: ruby
+      sudo: True
+    - role: letsencrypt
+      letsencrypt_webroot_path: /srv/www
+      letsencrypt_email: admin@seagl.org
+      letsencrypt_cert_domains:
+        - osem.seagl.org
+        - seagl.org
+      letsencrypt_renewal_command_args: '--renew-hook "systemctl restart nginx"'

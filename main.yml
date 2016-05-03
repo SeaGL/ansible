@@ -1,8 +1,0 @@
----
-# Playbook for SeaGL webserver
-- hosts: all
-  roles:
-    - base
-    - tools
-    - security
-    - server
